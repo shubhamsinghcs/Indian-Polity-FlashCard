@@ -10,15 +10,18 @@ const flashcards = [
 
 let currentIndex = 0;
 
+// Corrected element selection
 const flashcard = document.querySelector('.flashcard');
-const front = document.querySelector('.front');
-const back = document.querySelector('.back');
+const front = document.querySelector('.flashcard .front');
+const back = document.querySelector('.flashcard .back');
 const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
 const counter = document.getElementById('counter');
 const progressBar = document.getElementById('progress');
 
 function updateFlashcard(index) {
+    if (!flashcard || !front || !back) return; // Ensure elements exist
+
     const currentFlashcard = flashcards[index];
     front.textContent = currentFlashcard.question;
     back.textContent = currentFlashcard.answer;
@@ -26,14 +29,19 @@ function updateFlashcard(index) {
     progressBar.style.width = `${((index + 1) / flashcards.length) * 100}%`;
 }
 
-nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % flashcards.length;
-    updateFlashcard(currentIndex);
-});
+// Add event listeners only if buttons exist
+if (nextButton) {
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % flashcards.length;
+        updateFlashcard(currentIndex);
+    });
+}
 
-prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
-    updateFlashcard(currentIndex);
-});
+if (prevButton) {
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + flashcards.length) % flashcards.length;
+        updateFlashcard(currentIndex);
+    });
+}
 
 updateFlashcard(currentIndex);
