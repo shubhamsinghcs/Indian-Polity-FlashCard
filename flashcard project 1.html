@@ -3,27 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indian Polity Flashcards</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Indian Polity Flashcards | Constitution Learning Platform</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/flag-india.png">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Indian Polity Flashcards</h1>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-landmark"></i>
+                    <h1>Constitution<span>Hub</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#flashcards"><i class="fas fa-id-card"></i> Flashcards</a></li>
+                    <li><a href="#topics"><i class="fas fa-book"></i> Topics</a></li>
+                    <li><a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                    <li><a href="#progress"><i class="fas fa-chart-line"></i> Progress</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
     </header>
-    <div class="flashcard-container">
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="front"></div>
-                <div class="back"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Master Indian Polity & Constitution</h2>
+                <p>An interactive learning platform with flashcards, quizzes, and detailed explanations to help you understand India's democratic framework.</p>
+                <div class="hero-btns">
+                    <a href="#flashcards" class="btn primary-btn">Start Learning</a>
+                    <a href="quiz.html" class="btn secondary-btn">Take a Quiz</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>150+</h3>
+                        <p>Flashcards</p>
+                    </div>
+                    <div class="stat">
+                        <h3>8</h3>
+                        <p>Key Topics</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Quiz Questions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Indian Parliament">
+                <div class="image-overlay">
+                    <p>Explore the pillars of Indian democracy</p>
+                </div>
             </div>
         </div>
-        <div id="progress-container">
-            <div id="progress"></div>
+    </section>
+
+    <!-- Flashcards Section -->
+    <section class="flashcards-section" id="flashcards">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Flashcards</h2>
+                <p>Click on flashcards to flip and learn important concepts</p>
+            </div>
+            
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="articles">Articles</button>
+                <button class="filter-btn" data-category="fundamental-rights">Fundamental Rights</button>
+                <button class="filter-btn" data-category="directive-principles">Directive Principles</button>
+                <button class="filter-btn" data-category="parliament">Parliament</button>
+                <button class="filter-btn" data-category="judiciary">Judiciary</button>
+                <button class="filter-btn" data-category="amendments">Amendments</button>
+            </div>
+            
+            <div class="flashcards-container">
+                <div class="flashcard-controls">
+                    <button id="prev-card" class="control-btn"><i class="fas fa-chevron-left"></i> Previous</button>
+                    <span id="card-counter">Card 1 of 10</span>
+                    <button id="next-card" class="control-btn">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="card-category">Article</div>
+                            <h3 class="card-question">What does Article 1 of the Indian Constitution define?</h3>
+                            <div class="hint">Click to flip for answer</div>
+                            <div class="card-footer">
+                                <span class="difficulty easy">Easy</span>
+                                <span class="card-number">1/10</span>
+                            </div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="card-category">Article</div>
+                            <h3 class="card-answer">India as a Union of States</h3>
+                            <div class="card-explanation">
+                                <p>Article 1 declares India as a "Union of States" and specifies the territory of India shall comprise:
+                                <ol>
+                                    <li>The territories of the states</li>
+                                    <li>The Union territories</li>
+                                    <li>Any territories that may be acquired</li>
+                                </ol>
+                                </p>
+                            </div>
+                            <div class="card-actions">
+                                <button class="action-btn mark-known"><i class="fas fa-check-circle"></i> I Know This</button>
+                                <button class="action-btn review-later"><i class="fas fa-clock"></i> Review Later</button>
+                            </div>
+                            <div class="card-footer">
+                                <span class="tag">#Constitution #Basics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-indicator">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 10%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>Learning Progress: <strong id="progress-percent">10%</strong></span>
+                        <span id="cards-completed">1/10 cards completed</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="counter"></div>
-        <button id="prev">Previous</button>
-        <button id="next">Next</button>
-    </div>
-    <script src="script.js"></script>
+    </section>
+
+    <!-- Topics Section -->
+    <section class="topics-section" id="topics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Key Constitutional Topics</h2>
+                <p>Explore essential concepts of Indian Polity</p>
+            </div>
+            
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Constitution Overview</h3>
+                    <p>The Indian Constitution is the world's longest written constitution, adopted on 26th November 1949 and enacted on 26th January 1950.</p>
+                    <a href="#" class="topic-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Fundamental Rights</h3>
+                    <p>Part III (Articles 12-35) guarantees six fundamental rights to all citizens: Right to Equality, Freedom, Against Exploitation, Religion, Culture & Education, and Constitutional Remedies.</p>
+                    <a href="#" class="topic-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Directive Principles</h3>
+                    <p>Part IV (Articles 36-51) contains guidelines for the state to establish a just society. Though not enforceable in court, they are fundamental in governance.</p>
+                    <a href="#" class="topic-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Parliament & Executive</h3>
+                    <p>The Parliament consists of the President, Lok Sabha, and Rajya Sabha. It's responsible for law-making, while the Executive (President, Prime Minister, Council of Ministers) implements laws.</p>
+                    <a href="#" class="topic-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-scale-balanced"></i>
+                    </div>
+                    <h3>Judiciary</h3>
+                    <p>The Indian judiciary is independent and integrated, with the Supreme Court at the apex, followed by High Courts and subordinate courts. It safeguards fundamental rights and interprets the Constitution.</p>
+                    <a href="#" class="topic-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <h3>Elections & Voting</h3>
+                    <p>India follows a parliamentary system with universal adult suffrage. The Election Commission of India, an autonomous constitutional authority, administers free and fair elections.</p>
+                    <a href="#" class="topic-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Preview Section -->
+    <section class="quiz-preview" id="quiz">
+        <div class="container">
+            <div class="section-header">
+                <h2>Test Your Knowledge</h2>
+                <p>Challenge yourself with MCQ quizzes on Indian Polity</p>
+            </div>
+            
+            <div class="quiz-options">
+                <div class="quiz-card">
+                    <h3>Quick Quiz</h3>
+                    <p>5 questions • 3 minutes</p>
+                    <a href="quiz.html?type=quick" class="btn quiz-btn">Start Quick Quiz</a>
+                </div>
+                
+                <div class="quiz-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Full Constitution Test</h3>
+                    <p>20 questions • 15 minutes</p>
+                    <a href="quiz.html?type=full" class="btn quiz-btn">Start Full Test</a>
+                </div>
+                
+                <div class="quiz-card">
+                    <h3>Topic-wise Quiz</h3>
+                    <p>Choose specific topics</p>
+                    <a href="quiz.html?type=topic" class="btn quiz-btn">Select Topics</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Section -->
+    <section class="progress-section" id="progress">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Learning Progress</h2>
+                <p>Track your improvement across different topics</p>
+            </div>
+            
+            <div class="progress-dashboard">
+                <div class="progress-stats">
+                    <div class="stat-card">
+                        <h3 id="total-cards">15</h3>
+                        <p>Cards Studied</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="quiz-score">78%</h3>
+                        <p>Average Quiz Score</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="streak-days">7</h3>
+                        <p>Day Streak</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="mastered-topics">4</h3>
+                        <p>Topics Mastered</p>
+                    </div>
+                </div>
+                
+                <div class="progress-chart">
+                    <h3>Topic-wise Performance</h3>
+                    <div class="chart-bars">
+                        <div class="chart-bar">
+                            <span class="chart-label">Fundamental Rights</span>
+                            <div class="chart-container">
+                                <div class="chart-fill" style="width: 85%"></div>
+                            </div>
+                            <span class="chart-percent">85%</span>
+                        </div>
+                        <div class="chart-bar">
+                            <span class="chart-label">Directive Principles</span>
+                            <div class="chart-container">
+                                <div class="chart-fill" style="width: 72%"></div>
+                            </div>
+                            <span class="chart-percent">72%</span>
+                        </div>
+                        <div class="chart-bar">
+                            <span class="chart-label">Parliament</span>
+                            <div class="chart-container">
+                                <div class="chart-fill" style="width: 65%"></div>
+                            </div>
+                            <span class="chart-percent">65%</span>
+                        </div>
+                        <div class="chart-bar">
+                            <span class="chart-label">Judiciary</span>
+                            <div class="chart-container">
+                                <div class="chart-fill" style="width: 90%"></div>
+                            </div>
+                            <span class="chart-percent">90%</span>
+                        </div>
+                        <div class="chart-bar">
+                            <span class="chart-label">Amendments</span>
+                            <div class="chart-container">
+                                <div class="chart-fill" style="width: 58%"></div>
+                            </div>
+                            <span class="chart-percent">58%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reset-progress">
+                <button id="reset-btn" class="btn reset-btn"><i class="fas fa-redo"></i> Reset Progress</button>
+                <p class="reset-note">This will clear all your progress and start fresh.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-landmark"></i>
+                    <h2>Constitution<span>Hub</span></h2>
+                    <p>An educational platform for Indian Polity & Constitution</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#flashcards">Flashcards</a></li>
+                        <li><a href="#topics">Topics</a></li>
+                        <li><a href="#quiz">Quiz</a></li>
+                        <li><a href="#progress">Progress</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-about">
+                    <h3>About This Project</h3>
+                    <p>This interactive learning platform is designed to help students and civic learners understand the Indian Constitution through engaging flashcards, quizzes, and explanations.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 ConstitutionHub. Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for educational purposes.</p>
+                <p>Disclaimer: This platform is for educational use only. Refer to official sources for legal matters.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/flashcards.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
