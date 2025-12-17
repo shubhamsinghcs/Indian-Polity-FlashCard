@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Polity Quiz | LearnPolity</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/flag-india.png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-landmark"></i>
+                        <h1>Learn<span>Polity</span></h1>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html#flashcards"><i class="fas fa-id-card"></i> Flashcards</a></li>
+                    <li><a href="index.html#topics"><i class="fas fa-book"></i> Topics</a></li>
+                    <li><a href="quiz.html" class="active"><i class="fas fa-question-circle"></i> Quiz</a></li>
+                    <li><a href="index.html#progress"><i class="fas fa-chart-line"></i> Progress</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+        <div class="container">
+            <div class="quiz-header">
+                <h1>Indian Polity Quiz</h1>
+                <p>Test your knowledge with these multiple-choice questions</p>
+            </div>
+            
+            <div class="quiz-container">
+                <div class="quiz-info">
+                    <div class="quiz-stats">
+                        <div class="stat">
+                            <span class="stat-label">Questions</span>
+                            <span class="stat-value" id="total-questions">5</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Time</span>
+                            <span class="stat-value" id="time-left">10:00</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Score</span>
+                            <span class="stat-value" id="current-score">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="quiz-progress-fill" style="width: 0%"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="current-question">Question 1 of 5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quiz-content">
+                    <div id="quiz-question-container">
+                        <!-- Questions will be loaded here by JavaScript -->
+                    </div>
+                    
+                    <div class="quiz-controls">
+                        <button id="prev-question" class="btn control-btn"><i class="fas fa-chevron-left"></i> Previous</button>
+                        <button id="submit-quiz" class="btn primary-btn">Submit Quiz</button>
+                        <button id="next-question" class="btn control-btn">Next <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="quiz-result" id="quiz-result" style="display: none;">
+                    <div class="result-header">
+                        <h2>Quiz Completed!</h2>
+                        <p>Here's how you performed:</p>
+                    </div>
+                    
+                    <div class="result-score">
+                        <div class="score-circle">
+                            <svg width="120" height="120">
+                                <circle cx="60" cy="60" r="54" stroke="#e2e8f0" stroke-width="12" fill="none"></circle>
+                                <circle id="score-circle" cx="60" cy="60" r="54" stroke="#1a5fb4" stroke-width="12" fill="none" stroke-linecap="round" transform="rotate(-90 60 60)" stroke-dasharray="339.292" stroke-dashoffset="339.292"></circle>
+                            </svg>
+                            <div class="score-text">
+                                <span id="final-score">0</span>
+                                <small>out of 5</small>
+                            </div>
+                        </div>
+                        <div class="score-details">
+                            <h3 id="score-message">Keep Practicing!</h3>
+                            <p id="score-description">You answered <span id="correct-answers">0</span> out of 5 questions correctly.</p>
+                            <div class="score-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Correct</span>
+                                    <span class="breakdown-value correct" id="breakdown-correct">0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Incorrect</span>
+                                    <span class="breakdown-value incorrect" id="breakdown-incorrect">0</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Time Taken</span>
+                                    <span class="breakdown-value" id="time-taken">0:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button id="review-answers" class="btn secondary-btn"><i class="fas fa-list-check"></i> Review Answers</button>
+                        <button id="retake-quiz" class="btn primary-btn"><i class="fas fa-redo"></i> Retake Quiz</button>
+                        <a href="index.html" class="btn home-btn"><i class="fas fa-home"></i> Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-landmark"></i>
+                    <h2>Learn<span>Polity</span></h2>
+                    <p>An educational platform for Indian Polity & Constitution</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#flashcards">Flashcards</a></li>
+                        <li><a href="index.html#topics">Topics</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                        <li><a href="index.html#progress">Progress</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-about">
+                    <h3>About This Project</h3>
+                    <p>This interactive learning platform is designed to help students and civic learners understand the Indian Constitution through engaging flashcards, quizzes, and explanations.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 LearnPolity. Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for educational purposes.</p>
+                <p>Disclaimer: This platform is for educational use only. Refer to official sources for legal matters.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
